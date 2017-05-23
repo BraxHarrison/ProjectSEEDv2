@@ -1,0 +1,40 @@
+<Dialogue>
+
+    <Cutscene id="0" title="First Day On The Job" next="Clean Up">
+        <SpeechNode id="0" text="Hey! You're the new kid, right? Ready for your first day on the job?" jumpID="-1">
+            <Response text="Definitely." jumpID="1"/>
+            <Response text="I guess." jumpID="2"/>
+        </SpeechNode>
+        <SpeechNode id="1" text="Great! That's what I like to hear." jumpID="3"/>
+        <SpeechNode id="2" text="You'll need to have more enthusiasm than that, kid." jumpID="3"/>
+        <SpeechNode id="3" text="Anyway, before we get you started, there's a lot of paperwork we have to get through." jumpID="4" />
+        <SpeechNode id="4" text="I'll need you to initial here, and sign here. What's your name again?" jumpID="5"/>
+        <SpeechNode id="5" text="$$$$, is it? Got it. Alright, now you'll have to sign this nondisclosure agreement, and..." jumpID="6"/>
+        <SpeechNode id="6" text="I'm sure I don't need to tell you this, but this here is a top secret facility." jumpID="7"/>
+        <SpeechNode id="7" text="Under no circumstances are you to ever wander into any area other than the ones we've told you to clean, got it?" jumpID="-1">
+            <Response text="I understand." jumpID="8"/>
+            <Response text="Aw but why?" jumpID="9"/>
+        </SpeechNode>
+        <SpeechNode id="8" text="Good man. Alright, if you'll come on back, I'll show you to the supply closet and you can get started." jumpID="-2"/>
+        <SpeechNode id="9" text="Because technically, this is a government facility, which means you, as a civilian, aren't allowed access. Understand?" jumpID="10"/>
+        <SpeechNode id="10" text="(Sigh) Anyway, come back with me and I'll show you where you'll find your supplies." jumpID="-2"/>
+    </Cutscene>
+    <Cutscene id="1" title="Clean Up" next="Meet The Recluse">
+        <SpeechNode id="0" text="Alright! Now that I've shown you the supply closet, you can start by sweeping up the floors in all of the blue access areas." jumpID="1"/>
+        <SpeechNode id="1" text="It goes without saying that there will be severe consequences if you go poking around anywhere other than blue areas. Do I make myself clear?" jumpID="-1">
+            <Response text="Very." jumpID="2"/>
+            <Response text="CRYSTAL, SIR!" jumpID="3"/>
+            <Response text="Yes m'am" jumpID="4"/>
+        </SpeechNode>
+        <SpeechNode id="2" text="Great! Go ahead and get started then." jumpID="-2"/>
+        <SpeechNode id="3" text="...Don't do that." jumpID="-2"/>
+        <SpeechNode id="4" text="..." jumpID="5"/>
+        <SpeechNode id="5" text="Just sweep the damn floors" jumpID="-2"/>
+    </Cutscene>
+    <Cutscene id="2" title="Meet The Recluse" next="null">
+        <SpeechNode id="0" text="(You finish sweeping the last blue room)" jumpID="1"/>
+        <SpeechNode id="1" text="There you are!" jumpID="2"/>
+        <SpeechNode id="2" text="I just remembered that I forgot to introduce you to the staff here." jumpID="3"/>
+        <SpeechNode id="3" text="We're nothing if not friendly here at Transcendent." jumpID="-1"/>
+    </Cutscene>
+</Dialogue>

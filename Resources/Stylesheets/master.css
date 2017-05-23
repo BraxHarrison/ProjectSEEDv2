@@ -1,0 +1,30 @@
+@font-face{
+    src: url("/Fonts/Exo-Light.otf");
+}
+.list-button{
+    -fx-background-color:#42d9f4;
+}
+.dialogue-area{
+    -fx-background-color:#42bcf4;
+}
+.choice-button{
+    -fx-image: url("/Graphics/System/ChoiceButton.png");
+}
+.next-button{
+    -fx-image: url("/Graphics/System/NextButton.png");
+}
+.choice-shell{
+    -fx-background-color:#717d8c;
+}
+
+.choice-font{
+    -fx-text-fill: white;
+    -fx-font-family: "Exo";
+    -fx-font-size: 10pt;
+}
+
+.speech-font{
+    -fx-text-fill: black;
+    -fx-font-family: "Exo";
+    -fx-font-size: 14pt;
+}

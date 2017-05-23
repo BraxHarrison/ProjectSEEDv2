@@ -1,0 +1,24 @@
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.StackPane?>
+
+<?import javafx.scene.image.ImageView?>
+<StackPane fx:controller="Display.CutsceneUI" fx:id="mainDisplay" xmlns:fx="http://javafx.com/fxml" stylesheets="/Stylesheets/master.css" alignment="center">
+   <VBox StackPane.alignment="CENTER" maxWidth="150" maxHeight="80">
+       <Label text="Welcome to Cutscene."/>
+       <Button text="Back to main menu" onAction="#goBack"/>
+   </VBox>
+    <StackPane fx:id="choiceShell" pickOnBounds="false" StackPane.alignment="BOTTOM_RIGHT" maxWidth="150" maxHeight="200" styleClass="choice-shell">
+        <VBox fx:id="choiceArea" StackPane.alignment="CENTER" maxWidth="100" maxHeight="125" spacing="10"/>
+    </StackPane>
+    <StackPane fx:id="textDisplayArea" StackPane.alignment="BOTTOM_CENTER" maxWidth="900" maxHeight="200" styleClass="dialogue-area">
+        <Label fx:id="textLabel" text="(conversation goes here)" StackPane.alignment="TOP_LEFT" maxWidth="600" translateX="20" translateY="20" styleClass="speech-font" wrapText="true"/>
+        <ImageView fx:id="advanceButton" StackPane.alignment="BOTTOM_RIGHT" fitWidth="50" fitHeight="50" translateY="-45" translateX="-20" styleClass="next-button" onMousePressed="#nextText"/>
+    </StackPane>
+    <ImageView fx:id="choiceButton" fitWidth="75" fitHeight="75" StackPane.alignment="CENTER_RIGHT" translateY="95" translateX="-40" styleClass="choice-button" onMousePressed="#showChoices"/>
+
+
+
+</StackPane>

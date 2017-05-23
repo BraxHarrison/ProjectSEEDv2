@@ -1,0 +1,15 @@
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<StackPane fx:controller="Display.OverworldUI" fx:id="mainDisplay" xmlns:fx="http://javafx.com/fxml" stylesheets="/Stylesheets/master.css" alignment="center">
+    <Label text="Welcome to Overworld."/>
+    <VBox StackPane.alignment="CENTER" fx:id="testMenu" maxHeight="400" maxWidth="300">
+        <Button text="Add Roxy" onAction="#addRoxy"/>
+        <Button text="Save Game" onAction="#saveGame"/>
+    </VBox>
+</StackPane>
