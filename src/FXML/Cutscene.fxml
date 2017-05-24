@@ -6,19 +6,22 @@
 
 <?import javafx.scene.image.ImageView?>
 <StackPane fx:controller="Display.CutsceneUI" fx:id="mainDisplay" xmlns:fx="http://javafx.com/fxml" stylesheets="/Stylesheets/master.css" alignment="center">
-   <VBox StackPane.alignment="CENTER" maxWidth="150" maxHeight="80">
+    <ImageView fx:id="speakerPortrait" fitWidth="250" fitHeight="250" StackPane.alignment="CENTER" translateX="-300" translateY="-20"/>
+    <VBox StackPane.alignment="CENTER" maxWidth="150" maxHeight="80">
        <Label text="Welcome to Cutscene."/>
        <Button text="Back to main menu" onAction="#goBack"/>
    </VBox>
     <StackPane fx:id="choiceShell" pickOnBounds="false" StackPane.alignment="BOTTOM_RIGHT" maxWidth="150" maxHeight="200" styleClass="choice-shell">
         <VBox fx:id="choiceArea" StackPane.alignment="CENTER" maxWidth="100" maxHeight="125" spacing="10"/>
     </StackPane>
-    <StackPane fx:id="textDisplayArea" StackPane.alignment="BOTTOM_CENTER" maxWidth="900" maxHeight="200" styleClass="dialogue-area">
+    <StackPane fx:id="textDisplayArea" pickOnBounds="false" StackPane.alignment="BOTTOM_CENTER" maxWidth="900" maxHeight="200" styleClass="dialogue-area">
         <Label fx:id="textLabel" text="(conversation goes here)" StackPane.alignment="TOP_LEFT" maxWidth="600" translateX="20" translateY="20" styleClass="speech-font" wrapText="true"/>
-        <ImageView fx:id="advanceButton" StackPane.alignment="BOTTOM_RIGHT" fitWidth="50" fitHeight="50" translateY="-45" translateX="-20" styleClass="next-button" onMousePressed="#nextText"/>
+        <ImageView fx:id="choiceButton"  fitWidth="75" fitHeight="75" StackPane.alignment="BOTTOM_RIGHT" translateY="-165" translateX="-40" styleClass="choice-button" onMousePressed="#showChoices"/>
+        <ImageView fx:id="advanceButton"  StackPane.alignment="BOTTOM_RIGHT" fitWidth="75" fitHeight="75" translateY="-165" translateX="-40" styleClass="next-button" onMousePressed="#nextText"/>
     </StackPane>
-    <ImageView fx:id="choiceButton" fitWidth="75" fitHeight="75" StackPane.alignment="CENTER_RIGHT" translateY="95" translateX="-40" styleClass="choice-button" onMousePressed="#showChoices"/>
-
+    <StackPane fx:id="transitionScreen" styleClass="transition-screen">
+        <ImageView fx:id="transitionAnimation" StackPane.alignment="CENTER" fitHeight="250" fitWidth="250"/>
+    </StackPane>
 
 
 </StackPane>

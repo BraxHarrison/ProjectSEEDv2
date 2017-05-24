@@ -17,6 +17,10 @@
     -fx-background-color:#717d8c;
 }
 
+.transition-screen{
+    -fx-background-color:#000000;
+}
+
 .choice-font{
     -fx-text-fill: white;
     -fx-font-family: "Exo";

@@ -128,7 +128,7 @@ public class GameLogic {
 
     public void newGame() throws IOException, SAXException, ParserConfigurationException {
         gameData.init();
-        gameData.setCharacterName("Prota");
+        gameData.setCharacterName("LimpNoodles");
         saveGame();
         gameData.setStatus("loaded");
         setStageToCutscene("First Day On The Job");

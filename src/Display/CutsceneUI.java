@@ -3,11 +3,11 @@ package Display;
 import Logic.GameLogic;
 import Objects.Dialogue.Cutscene;
 import Objects.Dialogue.ResponseNode;
-import Utilities.Animator;
+import Utilities.CutsceneAnimator;
 import Utilities.Data.GameData;
 import javafx.event.ActionEvent;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.StackPane;
@@ -29,18 +29,21 @@ public class CutsceneUI {
     public VBox choiceArea;
     public StackPane choiceShell;
     public ImageView choiceButton;
+    public ImageView speakerPortrait;
+    public StackPane transitionScreen;
     private boolean choiceMenuExtended;
+    private String previousEmote;
 
     private Cutscene currentCutscene;
 
     private GameLogic game;
     private GameData gameData;
-    private Animator animator;
+    private CutsceneAnimator animator;
 
     public void init(GameLogic game,String cutscene){
         this.game = game;
         this.gameData = game.getGameData();
-        animator = new Animator();
+        animator = new CutsceneAnimator(this);
         currentCutscene = gameData.getAllCutscenes().get(cutscene);
         choiceMenuExtended = false;
         updateTextArea();
@@ -55,18 +58,31 @@ public class CutsceneUI {
         currentCutscene.getCurrentSpeech().setGameData(gameData);
         checkForAdvance();
         textLabel.setText(currentCutscene.getCurrentSpeech().getText());
+        updateSpeakerPortrait();
+
     }
-    private void checkForAdvance(){
+
+    private void updateSpeakerPortrait() {
+        String emote = currentCutscene.getCurrentSpeech().getSpeaker1Path();
+        if(!emote.equals("null")){
+            speakerPortrait.setVisible(true);
+            speakerPortrait.setImage(new Image(emote));
+        }
+        else{
+            speakerPortrait.setVisible(false);
+        }
+    }
+
+    //There's probably some janky code here that's tied up with a duplicate in Animator
+    public void checkForAdvance(){
         if(!currentCutscene.canContinue()){
             advanceButton.setVisible(false);
             createChoiceSelectors();
         }
-        else{
-            advanceButton.setVisible(true);
-        }
     }
 
     private void createChoiceSelectors() {
+        choiceArea.getChildren().clear();
         List<ResponseNode> responses = currentCutscene.getCurrentSpeech().getResponses();
         for(int i =0;i<responses.size();i++){
             int index = i;
@@ -115,5 +131,9 @@ public class CutsceneUI {
         }
         choiceMenuExtended = !choiceMenuExtended;
 
+    }
+
+    public Cutscene getCurrentCutscene(){
+        return currentCutscene;
     }
 }

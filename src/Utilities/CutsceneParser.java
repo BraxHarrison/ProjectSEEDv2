@@ -89,7 +89,9 @@ public class CutsceneParser {
 
         return (speechElement.getAttribute("id") + "/" +
                 speechElement.getAttribute("text") + "/"+
-                speechElement.getAttribute("jumpID"));
+                speechElement.getAttribute("jumpID") + "/" +
+                speechElement.getAttribute("s1") + "/" +
+                speechElement.getAttribute("e1"));
     }
 
     private String createResponseString(Element responseElement) {

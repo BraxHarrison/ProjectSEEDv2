@@ -19,14 +19,24 @@ public class SpeechNode implements java.io.Serializable {
     private ArrayList<ResponseNode> responses;
 
     private String text;
-    private String speakerName;
-    private String speakerExpression;
+    private String speaker1Name;
+    private String speaker1Emote;
+    private String speaker1Path;
+    private String speaker2Name;
+    private String speaker2Emote;
+    private String speaker2Path;
 
     public SpeechNode(String info){
         List<String> speechInfo = splitString(info);
         nodeID = Integer.parseInt(speechInfo.get(0));
         text = speechInfo.get(1);
         jumpID = Integer.parseInt(speechInfo.get(2));
+        getPortraits(speechInfo);
+    }
+
+    private void getPortraits(List<String> speechInfo) {
+        speaker1Name = speechInfo.get(3);
+        speaker1Emote = speechInfo.get(4);
     }
 
     public String insertName(String name) {
@@ -44,35 +54,33 @@ public class SpeechNode implements java.io.Serializable {
     public boolean canContinue(){
         return canContinue;
    }
-
-   public int getNodeID(){
+    public int getNodeID(){
        return nodeID;
    }
-
-   public int getJumpID(){
+    public int getJumpID(){
        return jumpID;
    }
-
-   public List<ResponseNode> getResponses(ArrayList<ResponseNode> responses){
+    public List<ResponseNode> getResponses(ArrayList<ResponseNode> responses){
        return this.responses;
     }
-
     public String getText(){
        return text;
     }
-
     public void setResponses(ArrayList<ResponseNode> responses){
         this.responses = responses;
     }
-
     public ArrayList<ResponseNode> getResponses(){
         return responses;
     }
-
     public void setJumpID(int id){
          jumpID = id;
     }
-
+    public String getSpeaker1Path(){
+        if(!speaker1Name.equals("null")){
+            return "/Graphics/" + "Portraits/" + speaker1Name + "/" + speaker1Emote + ".png";
+        }
+        return "null";
+    }
     public void setGameData(GameData gameData) {
         this.gameData = gameData;
     }
