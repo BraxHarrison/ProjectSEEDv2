@@ -7,9 +7,10 @@ Changes so far:
   -> Split classes up to be much smaller
   -> Added Main Menu
   -> Added dialogue system
+  -> Implemented portrait graphics for character dialogue
   
 Plans:
   
-  -> Implement portrait graphics for character dialogue 
+  -> Create scenes on top of other scenes
   -> Rework Battle System to involve timing-based attacks and dodges
   -> Utilize animated sprites
